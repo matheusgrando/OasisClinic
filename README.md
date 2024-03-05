@@ -47,7 +47,7 @@ Retorna um array com todos os agendamentos de consultas cadastrados pelo usuario
 
 ---
 
-### Cadastrar Categoria
+### Cadastrar Agendamento
 
 `POST` /agendamentos
 
