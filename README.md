@@ -20,11 +20,11 @@ API Rest do projeto Oasis
 - [Detalhar Agendamentos](#detalhar-agendamentos)
 - [Atualizar Agendamentos](#atualizar-agendamentos)
 
-### Listar Categorias
+### Listar Agendamentos 
 
 `GET` /agendamentos
 
-Retorna um array com todos as agendamentos cadastradas pelo usuario atual.
+Retorna um array com todos os agendamentos de consultas cadastrados pelo usuario atual.
 
 ##### Exemplo de Respostas
 
@@ -42,8 +42,8 @@ Retorna um array com todos as agendamentos cadastradas pelo usuario atual.
 
 | código | descrição |
 |--------|-----------|
-|200| Agendamento retornado com sucesso
-|401| Não autorizado. Realize a autenticação em /login
+|200| Agendamento de consulta retornado com sucesso.
+|401| Não autorizado. Realize a autenticação em /login.
 
 ---
 
@@ -57,8 +57,8 @@ Cadastra um agendamento com os dados enviados no corpo da requisição.
 
 | campo | tipo | obrigatório | descrição
 |-------|------|:-------------:|----------
-| nome  | string| ✅ | Um nome curto para identificar o agendamentos
-| icone | string| ❌ | O nome do ícone conforme bibilioteca Material Icons 
+| nome  | string| ✅ | Um nome curto para identificar o agendamento.
+| icone | string| ❌ | O nome do ícone conforme bibilioteca Material Icons. 
 
 ```js
 {
@@ -67,7 +67,7 @@ Cadastra um agendamento com os dados enviados no corpo da requisição.
 }
 ```
 
-##### Exemplo de Respostas
+##### Exemplo de Resposta
 
 ```js
 [
@@ -83,15 +83,15 @@ Cadastra um agendamento com os dados enviados no corpo da requisição.
 
 | código | descrição |
 |--------|-----------|
-|201| Agendamento cadastrado com sucesso
-|400| Validação falhou. Verifique os dados enviados no corpo da aquisição
-|401| Não autorizado. Realize a autenticação em /login
+|201| Agendamento cadastrado com sucesso.
+|400| Validação falhou. Verifique os dados enviados no corpo da aquisição.
+|401| Não autorizado. Realize a autenticação em /login.
 
 ---
 
-### Apagar categoria
+### Apagar agendamento
 
-`DELETE` /agendamento/`{id}`
+`DELETE` /agendamentos/`{id}`
 
 Apaga o agendamento com o `id` informado no parâmetro de path.
 
@@ -99,11 +99,12 @@ Apaga o agendamento com o `id` informado no parâmetro de path.
 
 | código | descrição |
 |--------|-----------|
-|204| Agendamento apagado com sucesso
-|401| Não autorizado. Realize a autenticação em /login
+|204| Agendamento apagado com sucesso.
+|401| Não autorizado. Realize a autenticação em /login.
+|404| Não existe agendamento com o `id` informado.
 
 ---
-### Detalhar Categoria
+### Detalhar Agendamentos
 
 `GET` /AGENDAMENTO/`{id}`
 
@@ -126,24 +127,24 @@ Retorna os dados do agendamento com o `id` informado no parâmetro de path.
 
 | código | descrição |
 |--------|-----------|
-|200| Agendamento retornado com sucesso
-|401| Não autorizado. Realize a autenticação em /login
-|404| Não existe agendamento com o `id` informado
+|200| Agendamento retornado com sucesso.
+|401| Não autorizado. Realize a autenticação em /login.
+|404| Não existe agendamento com o `id` informado.
 
 ---
 
-### Atualizar Categoria
+### Atualizar Agendamento
 
 `PUT` /agendamento/`{id}`
 
-Atualiza os dados o agendamento com o `id` informado no path
+Atualiza os dados do agendamento com o `id` informado no path
 
-#### Corpo de Requisição
+#### Exemplo de Corpo de Requisição
 
 | campo | tipo | obrigatório | descrição
 |-------|------|:-------------:|----------
-| nome  | string| ✅ | Um nome curto para identificar o agendamento
-| icone | string| ✅ | O nome do ícone conforme bibilioteca Material Icons 
+| nome  | string| ✅ | Um nome curto para identificar o agendamento.
+| icone | string| ✅ | O nome do ícone conforme bibilioteca Material Icons.
 
 ```js
 {
@@ -168,9 +169,9 @@ Atualiza os dados o agendamento com o `id` informado no path
 
 | código | descrição |
 |--------|-----------|
-|200| Sgendamento cadastrada com sucesso
-|400| Validação falhou. Verifique os dados enviados no corpo da requisição
-|401| Não autorizado. Realize a autenticação em /login
-|404| Não existe agendamento com o `id` informado
+|200| Agendamento atualizado com sucesso.
+|400| Validação falhou. Verifique os dados enviados no corpo da requisição.
+|401| Não autorizado. Realize a autenticação em /login.
+|404| Não existe agendamento com o `id` informado.
 
 ---
